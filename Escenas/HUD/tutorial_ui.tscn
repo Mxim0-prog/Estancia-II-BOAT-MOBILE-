@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://ceiplyr2cglik"]
+
+[ext_resource type="Script" uid="uid://dskvxxgye8w4s" path="res://Scripts/HUD/tutorial_ui.gd" id="1_okpq5"]
+
+[node name="TutorialUI" type="CanvasLayer"]
+script = ExtResource("1_okpq5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 50.0
+offset_bottom = 71.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/HBoxContainer"]
+modulate = Color(1, 1, 1, 0.823529)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="LabelInstruccion" type="Label" parent="Control/HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.8, 0, 1)
+text = "hola mundo"
+horizontal_alignment = 1
+vertical_alignment = 1

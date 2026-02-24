@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cs2sxc1nip4c4"]
+
+[ext_resource type="PackedScene" uid="uid://b46167wxbpxff" path="res://Escenas/NPC/EscenaBasura.tscn" id="1_juitx"]
+[ext_resource type="Texture2D" uid="uid://dgrijtc8ebxyq" path="res://Sprites/Recolectables/botella1_16px.png" id="2_u4tmp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juitx"]
+atlas = ExtResource("2_u4tmp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4tmp"]
+atlas = ExtResource("2_u4tmp")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3ckj"]
+atlas = ExtResource("2_u4tmp")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2g6p"]
+atlas = ExtResource("2_u4tmp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hy648"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juitx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4tmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3ckj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2g6p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_juitx"]
+size = Vector2(10, 17)
+
+[node name="Basura" instance=ExtResource("1_juitx")]
+trash_type = "botella"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_hy648")
+frame_progress = 0.637913
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_juitx")

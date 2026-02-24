@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://4km22qoe1x6l"]
+
+[ext_resource type="Script" uid="uid://3dlwupugw6f7" path="res://Scripts/NPC/pez.gd" id="1_dpohm"]
+[ext_resource type="Texture2D" uid="uid://0cyq4bjri6fg" path="res://Sprites/Enemigos/PezAnimated16px.png" id="2_5jnw7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_homfj"]
+atlas = ExtResource("2_5jnw7")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ywq"]
+atlas = ExtResource("2_5jnw7")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nurip"]
+atlas = ExtResource("2_5jnw7")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5621"]
+atlas = ExtResource("2_5jnw7")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dpohm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_homfj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0ywq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nurip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5621")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xhdmm"]
+size = Vector2(9, 16)
+
+[node name="Pez" type="Area2D"]
+script = ExtResource("1_dpohm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dpohm")
+frame = 3
+frame_progress = 0.5165
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_xhdmm")

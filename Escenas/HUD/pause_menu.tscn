@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://du8jnewhfx8u6"]
+
+[ext_resource type="Script" uid="uid://dk436c5sew4sx" path="res://Scripts/HUD/pause_menu.gd" id="1_tp35v"]
+[ext_resource type="Theme" uid="uid://dt8r8vlmr11qs" path="res://Fuentes/Fuentes.tres" id="2_5simc"]
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_tp35v")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0898696, 0.129514, 0.22538, 0.862745)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5simc")
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTINUAR"
+
+[node name="RestartButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "REINICIAR"
+
+[node name="MenuButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "MENU"

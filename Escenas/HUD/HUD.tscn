@@ -1,0 +1,192 @@
+[gd_scene load_steps=9 format=3 uid="uid://c413j3et0rsi5"]
+
+[ext_resource type="Script" uid="uid://ckas377kbyk3r" path="res://Scripts/HUD/HUD.gd" id="1_k5de2"]
+[ext_resource type="Texture2D" uid="uid://6332hij2fpha" path="res://Sprites/Elementos HUD/Gasolina.png" id="2_4mv50"]
+[ext_resource type="Theme" uid="uid://dt8r8vlmr11qs" path="res://Fuentes/Fuentes.tres" id="2_ngedl"]
+[ext_resource type="Texture2D" uid="uid://bkjpr1gs2y71u" path="res://Sprites/Elementos HUD/Barra_fondo.png" id="3_6pnkr"]
+[ext_resource type="Texture2D" uid="uid://bqp2dgockryon" path="res://Sprites/Elementos HUD/Barra_gas.png" id="4_001ks"]
+[ext_resource type="Texture2D" uid="uid://b2iucrkplf6o8" path="res://Sprites/Elementos HUD/EIP.png" id="5_psx8y"]
+[ext_resource type="Texture2D" uid="uid://ct8i7sbr2l0y4" path="res://Sprites/Elementos HUD/Barra_eip.png" id="6_wj714"]
+[ext_resource type="Texture2D" uid="uid://bmx6qd64qylyn" path="res://Sprites/Elementos HUD/Relok.png" id="7_pekqx"]
+
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("fuel_bar", "fuel_label", "eip_bar", "eip_label", "time_label", "game_over_panel", "title_label", "score_label", "reason_label", "restart_button", "menu_button", "bottle_count_label", "bag_count_label", "co2_reduction_label")]
+script = ExtResource("1_k5de2")
+fuel_bar = NodePath("FuelIndicador2/FuelBar")
+fuel_label = NodePath("FuelIndicador2/FuelLabel")
+eip_bar = NodePath("EipIndicador2/EipBar")
+eip_label = NodePath("EipIndicador2/EipLabel")
+time_label = NodePath("CenterContainer/TimeIndicador/TimeLabel")
+game_over_panel = NodePath("Game_over")
+title_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/TitleLabel")
+score_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/ScoreLabel")
+reason_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/ReasonLabel")
+restart_button = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/RestartButton")
+menu_button = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/MenuButton")
+bottle_count_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/BottleCountLabel")
+bag_count_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/BagCountLabel")
+co2_reduction_label = NodePath("Game_over/CenterContainer/PanelContainer/VBoxContainer/CO2ReductionLabel")
+
+[node name="PauseButton" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 41.0
+grow_horizontal = 0
+text = "II"
+icon_alignment = 1
+
+[node name="FuelIndicador2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 94.0
+offset_bottom = 26.0
+theme = ExtResource("2_ngedl")
+
+[node name="FuelIcon" type="TextureRect" parent="FuelIndicador2"]
+layout_mode = 2
+offset_left = -20.0
+offset_right = -4.0
+offset_bottom = 16.0
+texture = ExtResource("2_4mv50")
+
+[node name="FuelBar" type="TextureProgressBar" parent="FuelIndicador2"]
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 16.0
+texture_under = ExtResource("3_6pnkr")
+texture_progress = ExtResource("4_001ks")
+
+[node name="FuelLabel" type="Label" parent="FuelIndicador2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EipIndicador2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 94.0
+offset_bottom = 46.0
+theme = ExtResource("2_ngedl")
+
+[node name="EipIcon" type="TextureRect" parent="EipIndicador2"]
+layout_mode = 2
+offset_left = -20.0
+offset_right = -4.0
+offset_bottom = 16.0
+texture = ExtResource("5_psx8y")
+
+[node name="EipBar" type="TextureProgressBar" parent="EipIndicador2"]
+layout_mode = 2
+offset_right = 64.0
+offset_bottom = 16.0
+texture_under = ExtResource("3_6pnkr")
+texture_progress = ExtResource("6_wj714")
+
+[node name="EipLabel" type="Label" parent="EipIndicador2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -8.0
+offset_top = 10.0
+offset_right = 8.0
+offset_bottom = 27.0
+grow_horizontal = 2
+theme = ExtResource("2_ngedl")
+
+[node name="TimeIndicador" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TimeIcon" type="TextureRect" parent="CenterContainer/TimeIndicador"]
+layout_direction = 2
+layout_mode = 2
+texture = ExtResource("7_pekqx")
+
+[node name="TimeLabel" type="Label" parent="CenterContainer/TimeIndicador"]
+layout_mode = 2
+
+[node name="Game_over" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_ngedl")
+metadata/_edit_use_anchors_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="Game_over"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Game_over/CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game_over/CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReasonLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+process_mode = 2
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BottleCountLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BagCountLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CO2ReductionLabel" type="Label" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartButton" type="Button" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="MenuButton" type="Button" parent="Game_over/CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Menu principal"
+
+[connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]

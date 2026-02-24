@@ -1,0 +1,172 @@
+[gd_scene load_steps=17 format=3 uid="uid://buuqwrcfsr1tq"]
+
+[ext_resource type="Theme" uid="uid://dt8r8vlmr11qs" path="res://Fuentes/Fuentes.tres" id="1_536fo"]
+[ext_resource type="Script" uid="uid://b8kprilxa846w" path="res://Scripts/HUD/menu_principal.gd" id="1_iq5l4"]
+[ext_resource type="Texture2D" uid="uid://heq8yufbyryj" path="res://Tiles/tiles16px/Agua16px.png" id="2_i4iwo"]
+[ext_resource type="Texture2D" uid="uid://bnwj55ubq57wd" path="res://Iconos/LogoMain.png" id="4_crbgq"]
+[ext_resource type="Texture2D" uid="uid://dvy0ydhm4s5gk" path="res://Sprites/Recolectables/Bolsa24px.png" id="5_xklnw"]
+[ext_resource type="Texture2D" uid="uid://bew2ih41notph" path="res://Sprites/Recolectables/Botella2_16px.png" id="6_nra00"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36x3f"]
+atlas = ExtResource("5_xklnw")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjbd0"]
+atlas = ExtResource("5_xklnw")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ocrs"]
+atlas = ExtResource("5_xklnw")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvdrb"]
+atlas = ExtResource("5_xklnw")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_80gnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36x3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjbd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ocrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvdrb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpaxs"]
+atlas = ExtResource("6_nra00")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaeny"]
+atlas = ExtResource("6_nra00")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omvca"]
+atlas = ExtResource("6_nra00")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65yf7"]
+atlas = ExtResource("6_nra00")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6oi33"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpaxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaeny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omvca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65yf7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_536fo")
+script = ExtResource("1_iq5l4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i4iwo")
+
+[node name="Bolsa" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(278, 32)
+sprite_frames = SubResource("SpriteFrames_80gnj")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Bolsa4" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(442, 217)
+sprite_frames = SubResource("SpriteFrames_80gnj")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Bolsa3" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(62, 219)
+sprite_frames = SubResource("SpriteFrames_80gnj")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Botella2_" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(428, 89)
+sprite_frames = SubResource("SpriteFrames_6oi33")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Botella2_2" type="AnimatedSprite2D" parent="TextureRect"]
+position = Vector2(74, 53)
+sprite_frames = SubResource("SpriteFrames_6oi33")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("4_crbgq")
+
+[node name="Espaciador" type="Label" parent="CenterContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer2/PanelContainer"]
+layout_mode = 2
+
+[node name="Jugar" type="Button" parent="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "jugar"
+
+[node name="Tutorial" type="Button" parent="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="Salir" type="Button" parent="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+text = "salir"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer/Jugar" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer2/PanelContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

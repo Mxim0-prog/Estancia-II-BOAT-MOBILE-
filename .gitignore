@@ -1,16 +1,27 @@
-# Godot 4+ specific ignores
+# --- Godot 4 Específico ---
 .godot/
-.nomedia
-
-# Godot-specific ignores
+*.uid
 .import/
-export.cfg
-export_credentials.cfg
-
-# Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specific ignores
-.mono/
-data_*/
-mono_crash.*.json
+# --- Android (Lo que más pesa en tu RAR) ---
+android/build/
+android/.gradle/
+android/local.properties
+android/libs/godot-lib.template*
+*.apk
+*.aab
+
+# --- Exportaciones y Binarios ---
+APK/
+bin/
+build/
+*.pck
+*.exe
+*.zip
+
+# --- Archivos de Sistema y Editores ---
+.DS_Store
+Thumbs.db
+*.tmp
+*.lnk

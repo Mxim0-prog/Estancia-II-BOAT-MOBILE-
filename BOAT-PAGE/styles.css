@@ -1,0 +1,232 @@
+/* Fuente retro */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: #141c2c;
+  color: #fff;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  padding: 1rem 2rem;
+  border-bottom: 4px solid #00bfff;
+}
+
+header .logo img {
+  height: 60px; /* Puedes ajustar esta altura como prefieras */
+  width: auto;  /* Mantiene la proporción de la imagen */
+  image-rendering: pixelated; /* ¡Esencial para que no se vea borroso! */
+  display: block; /* Ayuda a evitar espacios extra */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #ffcc00;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border: 3px solid #ffcc00;
+  background: #0a101d;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: #ffcc00;
+  color: #0a101d;
+}
+
+/* Hero section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 2rem;
+  background: #1e2a47;
+  border-bottom: 4px solid #00ffff;
+}
+
+.hero-text {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #ffcc00;
+}
+
+.hero-text p {
+  font-size: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffcc00;
+  color: #0a101d;
+  padding: 0.8rem 1.2rem;
+  border: 4px solid #0a101d;
+  text-decoration: none;
+  font-size: 0.8rem;
+  box-shadow: 4px 4px #0a101d;
+}
+
+.btn:hover {
+  background: #00bfff;
+  color: #000;
+}
+
+.hero-img img { 
+  /* La línea "//" errónea ha sido eliminada de aquí */
+  width: 128px;
+  height: 128px;
+  max-width: 100%;
+  image-rendering: pixelated; /* efecto pixel art */
+  border: 4px solid #ffcc00;
+}
+
+/* Beneficios */
+.benefits {
+  padding: 2rem;
+  text-align: center;
+  background: #141c2c;
+  border-bottom: 4px solid #00bfff;
+}
+
+.benefits h2 {
+  margin-bottom: 2rem;
+  color: #ffcc00;
+}
+
+.benefit-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.benefit {
+  flex: 1;
+  background: #0a101d;
+  border: 4px solid #00bfff;
+  padding: 1rem;
+  font-size: 0.7rem;
+}
+
+/* Galería */
+.gallery {
+  padding: 2rem;
+  text-align: center;
+  background: #141c2c; /* Mismo fondo que benefits */
+  border-bottom: 4px solid #00bfff; /* Mismo borde que benefits */
+}
+
+.gallery h2 {
+  margin-bottom: 2rem;
+  color: #ffcc00;
+}
+
+.gallery-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start; /* Alinea las cajas arriba */
+}
+
+.gallery-item {
+  flex: 1;
+  background: #0a101d; /* Estilo de caja como .benefit */
+  border: 4px solid #00bfff;
+  padding: 1rem;
+}
+
+.gallery-item img {
+  max-width: 100%;
+  image-rendering: pixelated; /* Mantiene el pixel art */
+  border: 4px solid #ffcc00; /* Borde amarillo como la hero-img */
+  margin-bottom: 1rem;
+}
+
+.gallery-item h3 {
+  color: #ffcc00;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+
+/* Descarga (Antes Registro) */
+.download {
+  background: #1e2a47;
+  padding: 2rem;
+  text-align: center;
+}
+
+.download h2 {
+  margin-bottom: 1rem;
+  color: #ffcc00;
+}
+
+.download-button {
+  /* Estilos base que tenía el botón */
+  font-family: 'Press Start 2P', cursive;
+  padding: 0.8rem;
+  font-size: 0.7rem;
+  border: 3px solid #0a101d;
+  
+  /* Estilos específicos que tenía el botón */
+  background: #ffcc00;
+  color: #0a101d;
+  cursor: pointer;
+  box-shadow: 4px 4px #0a101d;
+
+  /* Estilos para que <a> se vea como botón */
+  text-decoration: none;
+  display: inline-block; /* Para que aplique padding y sombra */
+  margin-top: 1rem; /* Para separarlo del texto h3 */
+}
+
+.download-button:hover {
+  background: #00ffff;
+}
+
+
+/* Footer */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 1rem;
+  border-top: 4px solid #00bfff;
+  font-size: 0.6rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+
+  .benefit-list,
+  .gallery-list { 
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

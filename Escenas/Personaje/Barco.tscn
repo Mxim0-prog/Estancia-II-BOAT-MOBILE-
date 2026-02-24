@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://d3woe77jh1vp8"]
+
+[ext_resource type="Script" uid="uid://6sutljp35lap" path="res://Scripts/Personaje/bote.gd" id="1_1jphn"]
+[ext_resource type="Texture2D" uid="uid://cu45iph61c0tk" path="res://Sprites/Personaje/Barco_movimiento.png" id="1_xd3nf"]
+[ext_resource type="Texture2D" uid="uid://c2w2pw2in4m0r" path="res://Sprites/Personaje/Barco_estatico.png" id="2_1jphn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qfuxb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i46q6"]
+atlas = ExtResource("1_xd3nf")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tssd"]
+atlas = ExtResource("1_xd3nf")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crw0o"]
+atlas = ExtResource("1_xd3nf")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0nbje"]
+atlas = ExtResource("2_1jphn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjqcp"]
+atlas = ExtResource("2_1jphn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egash"]
+atlas = ExtResource("2_1jphn")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y5yg"]
+atlas = ExtResource("2_1jphn")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0mlpi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i46q6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tssd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crw0o")
+}],
+"loop": true,
+"name": &"move_boat",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0nbje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjqcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egash")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y5yg")
+}],
+"loop": true,
+"name": &"static_boat",
+"speed": 5.0
+}]
+
+[node name="Bote" type="CharacterBody2D"]
+script = ExtResource("1_1jphn")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_qfuxb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0mlpi")
+animation = &"static_boat"
+frame_progress = 0.150457

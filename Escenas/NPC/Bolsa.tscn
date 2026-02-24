@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://ighvva3hg0gd"]
+
+[ext_resource type="PackedScene" uid="uid://b46167wxbpxff" path="res://Escenas/NPC/EscenaBasura.tscn" id="1_aylpu"]
+[ext_resource type="Texture2D" uid="uid://dvy0ydhm4s5gk" path="res://Sprites/Recolectables/Bolsa24px.png" id="2_aylpu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36x3f"]
+atlas = ExtResource("2_aylpu")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pjbd0"]
+atlas = ExtResource("2_aylpu")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ocrs"]
+atlas = ExtResource("2_aylpu")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvdrb"]
+atlas = ExtResource("2_aylpu")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ha2y5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36x3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pjbd0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ocrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvdrb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="Basura" instance=ExtResource("1_aylpu")]
+fuel_to_give = 5.0
+trash_type = "bolsa"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ha2y5")
+frame_progress = 0.200711

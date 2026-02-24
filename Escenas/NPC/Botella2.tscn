@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://hgkxhov3uwxm"]
+
+[ext_resource type="PackedScene" uid="uid://b46167wxbpxff" path="res://Escenas/NPC/EscenaBasura.tscn" id="1_lpaxs"]
+[ext_resource type="Texture2D" uid="uid://bew2ih41notph" path="res://Sprites/Recolectables/Botella2_16px.png" id="2_gaeny"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpaxs"]
+atlas = ExtResource("2_gaeny")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gaeny"]
+atlas = ExtResource("2_gaeny")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omvca"]
+atlas = ExtResource("2_gaeny")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65yf7"]
+atlas = ExtResource("2_gaeny")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6l04o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpaxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gaeny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omvca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65yf7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpaxs"]
+size = Vector2(12, 17)
+
+[node name="Basura" instance=ExtResource("1_lpaxs")]
+trash_type = "botella"
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_6l04o")
+frame_progress = 0.90875
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_lpaxs")
