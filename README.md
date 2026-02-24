@@ -3,7 +3,7 @@
 <h1 align="left">ESTANCIA II: BOAT-MOBILE</h1>
         
 
-<h3 align="center">🛠️ Tecnologías Utilizadas</h3>
+<h3 align="center"> Tecnologías Utilizadas</h3>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Godot_Engine-46305E?style=for-the-badge&logo=godot-engine&logoColor=white" alt="Godot">
