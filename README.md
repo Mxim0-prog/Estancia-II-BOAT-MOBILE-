@@ -104,7 +104,7 @@ La organización del repositorio sigue un estándar modular para facilitar la es
   <a href="https://www.linkedin.com/in/maximo-juarez-rodríguez-8911b3327">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
-  <a href="https://github.com/Mxim0-prog">
+  <a href="https://github.com/Mxim0-Dev">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
   </a>
   <a href="mailto:mxoju07@gmail.com">
