@@ -78,6 +78,18 @@ Se desarrolló una página de aterrizaje con estética **Pixel-Art** y estilo re
   <em>Captura de pantalla de la pagina creada para el despliegue de la app.</em>
 </p>
 
+<p align="center">
+  <a href="https://mxim0-dev.github.io/Estancia-II-BOAT-MOBILE-/">
+          <img src="https://img.shields.io/badge/VISITAR_SITIO_WEB-46305E?style=for-the-badge&logo=github-pages&logoColor=white" width="200" alt="Sitio Web">
+  </a>
+</p>
+
+---
+
+## Cómo ejecutar
+Descarga la versión estable desde la sección de [Releases](https://github.com/Mxim0-Dev/Estancia-II-BOAT-MOBILE-/releases) y ejecuta `BOAT.apk`, o dentro del sitio web presiona el boton "Descargar ahora"
+
+
 ## Arquitectura del Proyecto
 La organización del repositorio sigue un estándar modular para facilitar la escalabilidad y el mantenimiento:
 
@@ -95,6 +107,8 @@ La organización del repositorio sigue un estándar modular para facilitar la es
 ├── 📄project.godot           # Archivo central del proyecto Godot
 └── 📄README.md               # Documentación técnica
 ```
+
+
 ---
 <p align="center">
   <b>¿Te gustó mi trabajo? ¡Conectemos!</b>
